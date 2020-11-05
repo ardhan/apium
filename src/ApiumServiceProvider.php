@@ -13,9 +13,8 @@ class ApiumServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('api-pegawai', function() {
-            return new Pegawai();
-        });
+        $this->app->bind('api-pegawai', function() { return new Pegawai();});
+        $this->app->bind('api-mahasiswa', function() { return new Mahasiswa();});
     }
 
     /**

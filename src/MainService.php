@@ -1,5 +1,5 @@
 <?php
-namespace App\Services;
+namespace App\Apium;
 
 use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Client;

@@ -9,6 +9,7 @@ use GuzzleHttp\Client;
  */
 class MainService
 {
+    protected $main_uri;
     protected $client_id;
     protected $secret_key;
     protected $client;
@@ -22,6 +23,7 @@ class MainService
     public function __construct()
     {
         $this->client = new Client();
+        $this->main_uri = config('serviceum_config.uri');
         $this->client_id = config('serviceum_config.client_id');
         $this->secret_key = config('serviceum_config.secret_key');
     }
@@ -35,7 +37,7 @@ class MainService
     public function getToken()
     {
         //uri untuk mendapatkan token
-        $uri = 'https://services.um.ac.id/api/gettoken?grant_type=client_credentials';
+        $uri = $this->main_uri.'/api/gettoken?grant_type=client_credentials';
 
         //request header
         $headers = [
@@ -60,6 +62,7 @@ class MainService
 
         return $body->token;
     }
+
 
     protected function requestData($uri, $body, $headers)
     {
@@ -88,22 +91,13 @@ class MainService
         }
     }
 
-    /**
-     * [setLimit description]
-     * @param [type] $limit [description]
-     */
-    public function setLimit($limit)
-    {
-        $this->limit = $limit;
-    }
-
 
     /**
-     * [setOffset description]
-     * @param [type] $offset [description]
+     * [getData description]
+     * @return [type] [description]
      */
-    public function setOffset($offset)
+    public function getData()
     {
-        $this->offset = $offset;
+
     }
 }

@@ -1,0 +1,35 @@
+{
+    "name": "ardhan/apium",
+    "description": "Package yang digunakan untuk terkoneksi dengan Services Universitas Negeri Malang",
+    "authors": [
+        {
+            "name": "Ardhan",
+            "email": "ardhan.matematika@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Ardhan\\Apium\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Ardhan\\Apium\\ApiumServiceProvider"
+            ],
+            "aliases":{
+                "Api": "Ardhan\\Apium\\Facades\\ApiPegawai"
+            }
+        }
+    },
+
+    "scripts": {
+        "post-install-cmd": [
+          "@php artisan vendor:publish --tag=public --force"
+        ],
+        "post-update-cmd": [
+          "@php artisan vendor:publish --tag=public --force"
+        ]
+    }
+}

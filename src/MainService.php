@@ -13,7 +13,6 @@ class MainService
     protected $client_id;
     protected $secret_key;
     protected $client;
-    protected static $obj = null;
 
     /**
      * mengambil data konfigurasi dari config/serviceum_config.php
@@ -89,13 +88,4 @@ class MainService
         }
     }
 
-
-    /**
-     * [getData description]
-     * @return [type] [description]
-     */
-    public function getData()
-    {
-
-    }
 }

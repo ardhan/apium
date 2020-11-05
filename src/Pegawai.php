@@ -16,11 +16,13 @@ class Pegawai extends MainService
     public function search($search = '')
     {
         $this->search = $search;
+        return $this;
     }
 
     public function kodeUnitInduk($kode_unit_induk)
     {
         $this->kode_unit_induk = $kode_unit_induk;
+        return $this;
     }
 
     public function get()

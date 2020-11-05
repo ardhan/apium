@@ -68,6 +68,26 @@ class Pegawai extends MainService
         return $this;
     }
 
+    /**
+     * @param $limit
+     * @return $this
+     */
+    public function limit($limit)
+    {
+        $this->limit = $limit;
+        return $this;
+    }
+
+    /**
+     * @param $offset
+     * @return $this
+     */
+    public function offset($offset)
+    {
+        $this->offset = $offset;
+        return $this;
+    }
+
 
     /**
      * @return false

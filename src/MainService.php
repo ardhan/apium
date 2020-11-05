@@ -13,8 +13,6 @@ class MainService
     protected $client_id;
     protected $secret_key;
     protected $client;
-    protected $limit = '';
-    protected $offset = '';
     protected static $obj = null;
 
     /**
